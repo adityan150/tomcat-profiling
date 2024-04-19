@@ -1,0 +1,21 @@
+version: "3"
+services:
+  tomcat:
+    build:
+      context: ./tomcat
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8088:8088"
+  prometheus:
+    build:
+      context: ./prometheus
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+  grafana:
+    build:
+      context: ./grafana
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
